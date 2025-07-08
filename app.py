@@ -201,7 +201,7 @@ def main():
     if 'conversation_history' not in st.session_state:
         st.session_state.conversation_history = []
     linkedin_profile_link = "https://www.linkedin.com/in/hitarth-thakkar/"
-    portfolio_link = "#"
+    portfolio_link = "https://hitarth-thakkar-portfolio.vercel.app/"
     github_profile_link = "https://github.com/HitarthThakkar"
 
     st.sidebar.markdown(
