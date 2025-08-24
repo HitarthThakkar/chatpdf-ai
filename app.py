@@ -69,7 +69,7 @@ def user_input(user_question, model_name, api_key, pdf_docs, conversation_histor
         new_db = FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)
         docs = new_db.similarity_search(user_question)
         chain = get_conversational_chain("Google AI", vectorstore=new_db, api_key=api_key)
-        response = chain({"input_documents": docs, "question": user_question}, return_only_outputs=True)
+        response = chain.invoke({"input_documents": docs, "question": user_question})
         user_question_output = user_question
         response_output = response['output_text']
         pdf_names = [pdf.name for pdf in pdf_docs] if pdf_docs else []
